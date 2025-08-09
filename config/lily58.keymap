@@ -10,6 +10,80 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    macros {
+        screenshot: screenshot {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL &kp LSHFT>
+                , <&macro_tap &kp N4>
+                , <&macro_release &kp LGUI &kp LCTRL &kp LSHFT>
+                ;
+        };
+
+        split_left: split_left {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+
+        split_right: split_right {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+
+        split_up: split_up {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+
+        split_down: split_down {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp DOWN>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+
+        full_screen: full_screen {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT &kp LCTRL>
+                , <&macro_tap &kp ENTER>
+                , <&macro_release &kp LALT &kp LCTRL>
+                ;
+        };
+
+        tab_left: tab_left {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LGUI &kp LALT>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LGUI &kp LALT>
+                ;
+        };
+
+        tab_right: tab_right {
+            compatible: "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LGUI &kp LALT>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LGUI &kp LALT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,7 +99,7 @@
 &kp GRAVE   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp BSPC
 &kp TAB     &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT   &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                        &kp LALT &kp LGUI &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RGUI &kp LALT
+                          &kp LALT &kp LGUI &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RGUI &kp LALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -39,11 +113,11 @@
 // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
-&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans    &trans    &trans
-&kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-&kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &kp TILDE
-&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans    &trans   &trans    &trans    &kp MINUS &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
-                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+&bt BT_CLR      &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans    &trans    &trans
+&kp F1          &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+&screenshot     &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &kp TILDE
+&trans          &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans    &trans   &trans    &trans    &kp MINUS &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE
+                                              &trans            &trans       &trans    &trans   &full_screen    &split_left    &split_right    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -57,11 +131,11 @@
 // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                       &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &trans
-&kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                       &trans      &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &trans
-&kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans   &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH
-                        &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans
+&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans     &trans      &trans
+&kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                       &kp N6      &kp N7    &kp UP    &kp N9     &kp N0      &trans
+&kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                       &trans      &kp LEFT  &kp DOWN  &kp RIGHT  &trans      &trans
+&kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans   &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT   &kp RBKT    &kp BSLH
+                        &trans  &split_up  &split_down    &trans   &trans    &trans      &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
