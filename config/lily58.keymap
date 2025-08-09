@@ -12,7 +12,7 @@
 / {
     macros {
         screenshot: screenshot {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LCTRL &kp LSHFT>
@@ -22,7 +22,7 @@
         };
 
         split_left: split_left {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
@@ -32,7 +32,7 @@
         };
 
         split_right: split_right {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
@@ -42,7 +42,7 @@
         };
 
         split_up: split_up {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
@@ -52,7 +52,7 @@
         };
 
         split_down: split_down {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
@@ -62,7 +62,7 @@
         };
 
         full_screen: full_screen {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
@@ -72,7 +72,7 @@
         };
 
         tab_left: tab_left {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LALT>
@@ -82,7 +82,7 @@
         };
 
         tab_right: tab_right {
-            compatible: "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LALT>
