@@ -11,8 +11,9 @@
 
 / {
     macros {
-        screen_shot: screen_shot {
+        screenshot: screenshot {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LCTRL &kp LSHFT>
                 , <&macro_tap &kp N4>
@@ -22,6 +23,7 @@
 
         split_left: split_left {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
                 , <&macro_tap &kp LEFT>
@@ -31,6 +33,7 @@
 
         split_right: split_right {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
                 , <&macro_tap &kp RIGHT>
@@ -40,6 +43,7 @@
 
         split_up: split_up {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
                 , <&macro_tap &kp UP>
@@ -49,6 +53,7 @@
 
         split_down: split_down {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
                 , <&macro_tap &kp DOWN>
@@ -58,6 +63,7 @@
 
         full_screen: full_screen {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &kp LCTRL>
                 , <&macro_tap &kp ENTER>
@@ -67,6 +73,7 @@
 
         tab_left: tab_left {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LALT>
                 , <&macro_tap &kp LEFT>
@@ -76,6 +83,7 @@
 
         tab_right: tab_right {
             compatible: "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &kp LALT>
                 , <&macro_tap &kp RIGHT>
