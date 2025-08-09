@@ -11,7 +11,7 @@
 
 / {
     macros {
-        screenshot: screenshot {
+        screen_shot: screen_shot {
             compatible: "zmk,behavior-macro";
             bindings
                 = <&macro_press &kp LGUI &kp LCTRL &kp LSHFT>
